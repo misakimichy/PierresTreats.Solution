@@ -1,3 +1,8 @@
+@using Microsoft.AspNetCore.Identity
+@using PierresTreats.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,9 +12,22 @@
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
-    <div class="container">
-      @RenderBody()
+    @if (SignInManager.IsSignedIn(User))
+  {
+    <form asp-area="" asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="account-container">
+      <p><a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">👋 @UserManager.GetUserName(User)</a></p>
+      <input type="submit" class="btn btn-link navbar-btn navbar-link" value="Log out"/>
+    </form>
+  }
+  else
+  {
+    <div class="account-container">
+      <p>@Html.ActionLink("Login", "Login", "Account")</p>
+      <p>@Html.ActionLink("Register a New User", "Register", "Account")</p>
     </div>
+  }
+    <h1 class="jumbotron">Pierre's Treats</h1>
+    @RenderBody()
     @Html.Partial("Footer")
   </body>
 </html>

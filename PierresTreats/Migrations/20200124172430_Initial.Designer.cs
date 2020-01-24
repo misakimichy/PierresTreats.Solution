@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PierresTreats.Models;
 
-namespace Library.Migrations
+namespace PierresTreats.Migrations
 {
     [DbContext(typeof(PierresTreatsContext))]
     [Migration("20200124172430_Initial")]

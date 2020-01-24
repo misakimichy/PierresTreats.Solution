@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PierresTreats.Models;
 
-namespace Library.Migrations
+namespace PierresTreats.Migrations
 {
     [DbContext(typeof(PierresTreatsContext))]
     partial class PierresTreatsContextModelSnapshot : ModelSnapshot
