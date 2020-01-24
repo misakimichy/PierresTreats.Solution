@@ -1,0 +1,29 @@
+@{
+    Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Treat
+
+<div class="info-container">
+<h3>@Html.DisplayFor(model => model.Name)</h3>
+@if(@Model.Flavors.Count == 0)
+{
+    <p>This book doens't contain any flavors.</p>
+}
+else
+{
+    <h5>Flavor:</h5>
+    <ul>
+    @foreach(var join in Model.Flavors)
+    {
+        <li>🔸@join.Flavor.Name</li>
+    }
+    </ul>
+}
+</div>
+
+<p>@Html.ActionLink("Back to Treat List", "Index")</p>
+<p>@Html.ActionLink("Edit This Treat", "Edit", new { id = Model.TreatId})</p>
+<p>@Html.ActionLink("Add More Flavor", "AddFlavor", new { id = Model.TreatId})</p>
+<p>@Html.ActionLink("Delete This Treat", "Delete", new { id = Model.TreatId})</p>
+<p>@Html.ActionLink("Go Home", "Index", "Home")</p>

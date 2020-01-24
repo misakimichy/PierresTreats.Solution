@@ -1,0 +1,28 @@
+@{
+    Layout = "_Layout";
+}
+
+@using PierresTreats.Models;
+@model IEnumerable<PierresTreats.Models.Treat>
+
+<div class="info-container">
+<h1>List of Treats</h1><br>
+@if(Model.Any())
+{
+    <ul>
+    @foreach (Treat treat in Model)
+    {
+        <li>@Html.ActionLink($"{treat.Name}", "Details", new { id = treat.TreatId })</li>
+        <hr />
+    }
+    </ul>
+}
+else
+{
+    <h3>There are no treats added yet.</h3>
+}
+</div>
+
+
+<p>@Html.ActionLink("Add New Treat", "Create")</p>
+<p>@Html.ActionLink("Go Home", "Index", "Home")</p>

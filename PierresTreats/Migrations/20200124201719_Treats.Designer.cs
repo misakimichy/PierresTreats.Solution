@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PierresTreats.Models;
 
 namespace PierresTreats.Migrations
 {
     [DbContext(typeof(PierresTreatsContext))]
-    partial class PierresTreatsContextModelSnapshot : ModelSnapshot
+    [Migration("20200124201719_Treats")]
+    partial class Treats
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -278,7 +280,7 @@ namespace PierresTreats.Migrations
 
             modelBuilder.Entity("PierresTreats.Models.FlavorTreat", b =>
                 {
-                    b.HasOne("PierresTreats.Models.Flavor", "Flavors")
+                    b.HasOne("PierresTreats.Models.Flavor", "Flavor")
                         .WithMany("Treats")
                         .HasForeignKey("FlavorId")
                         .OnDelete(DeleteBehavior.Cascade);
