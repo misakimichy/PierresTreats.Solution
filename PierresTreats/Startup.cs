@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using PierredTreats.Models;
+using PierresTreats.Models;
 
-namespace PierredTreats
+namespace PierresTreats
 {
     public class Startup
     {
@@ -25,11 +25,11 @@ namespace PierredTreats
             services.AddMvc();
 
             services.AddEntityFrameworkMySql()
-            .AddDbContext<PierredTreatsContext>(options => options
+            .AddDbContext<PierresTreatsContext>(options => options
             .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
             
             services.AddIdentity<ApplicationUser, IdentityRole>()
-            .AddEntityFrameworkStores<PierredTreatsContext>()
+            .AddEntityFrameworkStores<PierresTreatsContext>()
             .AddDefaultTokenProviders();
 
             services.Configure<IdentityOptions>(options =>
