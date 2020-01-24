@@ -1,0 +1,75 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Open sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, p, ul > li {
+    text-align: center;
+}
+
+.btn {
+    display: block;
+    margin: 30px auto 0 auto;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.account-container
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px;
+}
+
+.account-container > p, .account-container > input {
+    margin: 0 10px 0 0 ;
+}
+
+.account-container > p > a {
+    padding: 20px;
+}
+
+.main-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-container
+{
+    max-width: 50%;
+    border: 1px solid #6c757d;
+    border-radius: 4px;
+    padding: 30px;
+    margin: 0 auto 30px auto;
+}
+
+footer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    height: 10vh;
+    color:#8d8d8d;
+    background:#eee;
+    padding:8px;
+}
