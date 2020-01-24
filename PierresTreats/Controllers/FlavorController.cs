@@ -55,5 +55,34 @@ namespace PierresTreats.Controllers
                 .FirstOrDefault(flavor => flavor.FlavorId == id);
             return View(thisFlavor);
         }
+
+        public ActionResult Edit(int id)
+        {
+            var thisFlavor = _db.Flavor.FirstOrDefault(flavor => flavor.FlavorId == id);
+            return View(thisFlavor);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Flavor flavor)
+        {
+            _db.Entry(flavor).State = EntityState.Modified;
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var thisFlavor = _db.Flavor.FirstOrDefault(flavor => flavor.FlavorId == id);
+            return View(thisFlavor);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            var thisFlavor = _db.Flavor.FirstOrDefault(flavor => flavor.FlavorId == id);
+            _db.Flavor.Remove(thisFlavor);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
