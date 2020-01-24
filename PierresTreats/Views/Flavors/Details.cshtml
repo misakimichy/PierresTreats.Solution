@@ -5,15 +5,13 @@
 @model PierresTreats.Models.Flavor
 
 <div class="info-container">
-<h3>@Html.DisplayFor(model => model.Name)</h3>
-
 @if(@Model.Treats.Count == 0)
 {
     <p>This flavor doens't contain any treats.</p>
 }
 else
 {
-    <h5>Treats under this flavor</h5>
+    <h3>Treats under @Html.DisplayFor(model => model.Name)</h3><br>
     <ul>
         @foreach(var join in Model.Treats)
         {
