@@ -26,8 +26,10 @@
       <p>@Html.ActionLink("Register a New User", "Register", "Account")</p>
     </div>
   }
-    <h1 class="jumbotron">Pierre's Treats</h1>
-    @RenderBody()
-    @Html.Partial("Footer")
+    <h1>Pierre's Treats</h1>
+    <div class="info-container">
+      @RenderBody()
+    </div>
   </body>
+  @Html.Partial("Footer")
 </html>

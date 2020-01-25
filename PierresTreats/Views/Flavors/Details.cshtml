@@ -4,23 +4,21 @@
 
 @model PierresTreats.Models.Flavor
 
-<div class="info-container">
-    @if(@Model.Treats.Count == 0)
-    {
-        <p>This flavor doens't contain any treats.</p>
-    }
-    else
-    {
-        <h3>Treats under @Html.DisplayFor(model => model.Name) flavor</h3><br>
-        <ul>
-            @foreach(var join in Model.Treats)
-            {
-                <li>@join.Treat.Name</li>
-                <hr />
-            }
-        </ul>
-    }
-</div>
+@if(@Model.Treats.Count == 0)
+{
+    <p>This flavor doens't contain any treats.</p>
+}
+else
+{
+    <h3>Treats under @Html.DisplayFor(model => model.Name) flavor</h3><br>
+    <ul>
+        @foreach(var join in Model.Treats)
+        {
+            <li>@join.Treat.Name</li>
+            <hr />
+        }
+    </ul>
+}
 
 <p>@Html.ActionLink("Back to Flavor List", "Index")</p>
 <p>@Html.ActionLink("Edit this Flavor", "Edit", new { id = Model.FlavorId})</p>

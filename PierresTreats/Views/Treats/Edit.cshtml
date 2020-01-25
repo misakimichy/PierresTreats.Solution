@@ -4,20 +4,18 @@
 
 @model PierresTreats.Models.Treat
 
-<div class="info-container">
-    <h2>Edit</h2><br>
-    @using (Html.BeginForm())
-    {
-        @Html.HiddenFor(model => model.TreatId)
-        <span>Name:</span>
-        @Html.TextBoxFor(model => model.Name)<br><br>
+<h2>Edit</h2><br>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.TreatId)
+    <span>Name:</span>
+    @Html.TextBoxFor(model => model.Name)<br><br>
 
-        @Html.Label("Select a Flavor: ")
-        @Html.DropDownList("FlavorId")
-        
-        <input type="submit" value="Save" class="btn btn-info">
-    }
-</div>
+    @Html.Label("Select a Flavor: ")
+    @Html.DropDownList("FlavorId")
+    
+    <input type="submit" value="Save" class="btn btn-info">
+}
 
 <p>@Html.ActionLink("Back Treat List", "Index")</p>
 <p>@Html.ActionLink("Go Home", "Index", "Home")</p>

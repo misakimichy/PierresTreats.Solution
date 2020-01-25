@@ -6,14 +6,12 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-  <div class="info-container">
-    <h2>Do you want to log out?</h2>
-    <h5>See you next time @User.Identity.Name 👋</h5>
-    @using (Html.BeginForm("LogOff", "Account"))
-    {
-      <input type="submit" value="Log out" class="btn btn-info" />
-    }
-  </div>
+  <h2>Do you want to log out?</h2><br>
+  <h5>See you next time @User.Identity.Name 👋</h5>
+  @using (Html.BeginForm("LogOff", "Account"))
+  {
+    <input type="submit" value="Log out" class="btn btn-info" />
+  }
 }
 else
 {
