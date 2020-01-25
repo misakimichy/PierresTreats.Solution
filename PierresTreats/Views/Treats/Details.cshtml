@@ -19,9 +19,9 @@ else
     }
     </ul>
 }
-
-<p>@Html.ActionLink("Back to Treat List", "Index")</p>
-<p>@Html.ActionLink("Edit This Treat", "Edit", new { id = Model.TreatId})</p>
-<p>@Html.ActionLink("Add More Flavor", "AddFlavor", new { id = Model.TreatId})</p>
-<p>@Html.ActionLink("Delete This Treat", "Delete", new { id = Model.TreatId})</p>
-<p>@Html.ActionLink("Go Home", "Index", "Home")</p>
+<div class="link-container">
+    <p>@Html.ActionLink("Back to Treat List", "Index")</p>
+    <p>@Html.ActionLink("Edit This Treat", "Edit", new { id = Model.TreatId})</p>
+    <p>@Html.ActionLink("Add More Flavor", "AddFlavor", new { id = Model.TreatId})</p>
+    <p>@Html.ActionLink("Delete This Treat", "Delete", new { id = Model.TreatId})</p>
+</div>

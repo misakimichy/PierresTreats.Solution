@@ -26,9 +26,20 @@ p, li {
 body > h1 {
     font-family: cursive;
     font-size: 80px;
+    padding: 20px;
 }
 
-.account-container > p , a, input[value="Log out"] {
+body > h1 > a {
+    color:#e8e8e8;
+    padding: 20px;
+}
+
+body > h1 > a:hover {
+    color:#e8e8e8;
+    text-decoration: none;
+}
+
+.account-container > p , a, #header-logout {
     color: #002b59;
 }
 
@@ -76,6 +87,14 @@ ul, li {
     border-radius: 4px;
     padding: 30px;
     margin: 0 auto 30px auto;
+}
+
+.link-container {
+    margin-top: 30px;
+}
+
+.link-container > p {
+    font-size: 16px;
 }
 
 footer {

@@ -11,8 +11,10 @@
     <span>Name:</span>
     @Html.TextBoxFor(model => model.Name)<br><br>
     
-    <input type="submit" value="Save" class="btn btn-info">
+    <input type="submit" value="Save" class="btn btn-dark">
 }
 
-<p>@Html.ActionLink("Back to Flavor List", "Index")</p>
-<p>@Html.ActionLink("Go Home", "Index", "Home")</p>
+<hr />
+<div class="link-container">
+    <p>@Html.ActionLink("Back to Flavor List", "Index")</p>
+</div>

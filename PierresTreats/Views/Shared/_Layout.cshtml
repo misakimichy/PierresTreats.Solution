@@ -16,7 +16,7 @@
   {
     <form asp-area="" asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="account-container">
       <p><a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">👋 @UserManager.GetUserName(User)</a></p>
-      <input type="submit" class="btn btn-link navbar-btn navbar-link" value="Log out"/>
+      <input type="submit" class="btn btn-link navbar-btn navbar-link" id="header-logout" value="Log out"/>
     </form>
   }
   else
@@ -26,7 +26,7 @@
       <p>@Html.ActionLink("Register a New User", "Register", "Account")</p>
     </div>
   }
-    <h1>Pierre's Treats</h1>
+    <h1>@Html.ActionLink("Pierre's Treats", "Index", "Home")</h1>
     <div class="info-container">
       @RenderBody()
     </div>

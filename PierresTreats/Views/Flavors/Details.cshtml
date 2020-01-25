@@ -6,7 +6,7 @@
 
 @if(@Model.Treats.Count == 0)
 {
-    <p>This flavor doens't contain any treats.</p>
+    <h2>This flavor doens't contain any treats.</h2>
 }
 else
 {
@@ -14,14 +14,15 @@ else
     <ul>
         @foreach(var join in Model.Treats)
         {
-            <li>@join.Treat.Name</li>
+            <li>🔸@join.Treat.Name</li>
             <hr />
         }
     </ul>
 }
 
-<p>@Html.ActionLink("Back to Flavor List", "Index")</p>
-<p>@Html.ActionLink("Edit this Flavor", "Edit", new { id = Model.FlavorId})</p>
-<p>@Html.ActionLink("Add Treat to this Flavor", "Create", "Treats", new { id = Model.FlavorId})</p>
-<p>@Html.ActionLink("Delete this Flavor", "Delete", new { id = Model.FlavorId})</p>
-<p>@Html.ActionLink("Go Home", "Index", "Home")</p>
+<div class="link-container">
+    <p>@Html.ActionLink("Back to Flavor List", "Index")</p>
+    <p>@Html.ActionLink("Edit this Flavor", "Edit", new { id = Model.FlavorId})</p>
+    <p>@Html.ActionLink("Add Treat to this Flavor", "Create", "Treats", new { id = Model.FlavorId})</p>
+    <p>@Html.ActionLink("Delete this Flavor", "Delete", new { id = Model.FlavorId})</p>
+</div>

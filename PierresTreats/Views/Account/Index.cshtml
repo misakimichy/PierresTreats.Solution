@@ -10,13 +10,14 @@
   <h5>See you next time @User.Identity.Name 👋</h5>
   @using (Html.BeginForm("LogOff", "Account"))
   {
-    <input type="submit" value="Log out" class="btn btn-info" />
+    <input type="submit" value="Log out" class="btn btn-dark" />
   }
 }
 else
 {
-  <p>@Html.ActionLink("Register", "Register")</p>
-  <p>@Html.ActionLink("Log in", "Login")</p>
+  <hr />
+  <div class="link-container">
+    <p>@Html.ActionLink("Register", "Register")</p>
+    <p>@Html.ActionLink("Log in", "Login")</p>
+  </div>
 }
-
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
