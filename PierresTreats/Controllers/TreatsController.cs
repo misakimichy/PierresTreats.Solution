@@ -11,6 +11,7 @@ using PierresTreats.Models;
 
 namespace PierresTreatsControllers
 {
+    [Authorize]
     public class treatsController : Controller
     {
         private readonly PierresTreatsContext _db;
