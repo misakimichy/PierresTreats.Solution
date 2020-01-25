@@ -100,7 +100,7 @@ namespace PierresTreatsControllers
             var joinEntry = _db.FlavorTreats.FirstOrDefault(entry => entry.FlavorTreatId == joinId);
             _db.FlavorTreats.Remove(joinEntry);
             _db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", new { id = joinEntry.TreatId });
         }
 
         public ActionResult AddFlavor(int id)
@@ -119,7 +119,7 @@ namespace PierresTreatsControllers
                 _db.FlavorTreats.Add(new FlavorTreat() { FlavorId = FlavorId, TreatId = treat.TreatId });
             }
             _db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", new { id = treat.TreatId });
         }
     }
 }
