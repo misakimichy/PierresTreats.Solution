@@ -5,14 +5,14 @@
 @model PierresTreats.Models.Flavor
 
 <div class="info-container">
-<h1>Add a New Flavor</h1><br>
-@using (Html.BeginForm())
-{
-    <span>Name:</span>
-    @Html.TextBoxFor(model => model.Name)<br><br>
-    
-    <input type="submit" value="Add a Flavor" class="btn btn-info">
-}
+    <h2>Add a New Flavor</h2><br>
+    @using (Html.BeginForm())
+    {
+        <span>Name:</span>
+        @Html.TextBoxFor(model => model.Name)<br><br>
+        
+        <input type="submit" value="Add a Flavor" class="btn btn-info">
+    }
 </div>
 
 <p>@Html.ActionLink("Back to Flavor List", "Index")</p>

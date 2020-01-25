@@ -4,11 +4,10 @@
 
 @using System.Security.Claims
 
-
 @if (User.Identity.IsAuthenticated)
 {
   <div class="info-container">
-    <h1>Do you want to log out?</h1>
+    <h2>Do you want to log out?</h2>
     <h5>See you next time @User.Identity.Name 👋</h5>
     @using (Html.BeginForm("LogOff", "Account"))
     {

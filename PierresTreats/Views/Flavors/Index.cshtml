@@ -6,23 +6,22 @@
 @model IEnumerable<PierresTreats.Models.Flavor>
 
 <div class="info-container">
-<h1>List of Flavors</h1>
-@if(Model.Any())
-{
-    <ul>
-    @foreach (Flavor flavor in Model)
+    <h2>List of Flavors</h2><br>
+    @if(Model.Any())
     {
-        <li>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId })</li>
-        <hr />
+        <ul>
+        @foreach (Flavor flavor in Model)
+        {
+            <li>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId })</li>
+            <hr />
+        }
+        </ul>
     }
-    </ul>
-}
-else
-{
-    <h3>There are no flavors added yet.</h3>
-}
+    else
+    {
+        <h3>There are no flavors added yet.</h3>
+    }
 </div>
-
 
 <p>@Html.ActionLink("Add New Flavor", "Create")</p>
 <p>@Html.ActionLink("Go Home", "Index", "Home")</p>

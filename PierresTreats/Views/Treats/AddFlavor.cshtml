@@ -4,21 +4,21 @@
 
 @model PierresTreats.Models.Treat
 
-
 <div class="info-container">
-<h1>Add a Flavor</h1><br>
-<h3>@Html.DisplayFor(model => model.Name)</h3>
+  <h2>Add a Flavor</h2><br>
+  <h3>@Html.DisplayFor(model => model.Name)</h3>
 
-@using (Html.BeginForm())
-{
-    @Html.HiddenFor(model => model.TreatId)
+  @using (Html.BeginForm())
+  {
+      @Html.HiddenFor(model => model.TreatId)
 
-    @Html.Label("Choose a flavoe: ")
-    @Html.DropDownList("FlavorId")
+      @Html.Label("Choose a flavoe: ")
+      @Html.DropDownList("FlavorId")
 
-    <input type="submit" value="Save" class="btn btn-info"/>
-}
+      <input type="submit" value="Save" class="btn btn-info"/>
+  }
 </div>
 
 <p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Add New Flavor", "Create", "Flavors")</p>
 <p>@Html.ActionLink("Go Home", "Index", "Home")</p>
